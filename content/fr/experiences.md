@@ -1,0 +1,143 @@
+---
+items:
+  - company: "Thales"
+    position: "Ingénieur Logiciel"
+    type: "CDI"
+    from: "Septembre 2023"
+    to: "Aujourd'hui"
+    sub_content:
+      - company: "EDF"
+        position: "Ingénieur Logiciel Full Stack"
+        type: "Mission"
+        from: "Mai 2025"
+        to: "Aujourd'hui"
+        content: "Développement d'un outil collaboratif de gestion des données métier avec workflows personnalisables, utilisé en interne chez EDF."
+        responsibilities:
+          - "Développement full stack sur la plateforme existante."
+          - "Maintenance continue (RUN/MCO) et améliorations fonctionnelles."
+          - "Contributions à un framework PHP propriétaire et à des outils internes."
+          - "Gestion du support technique et des demandes fonctionnelles, communication directe avec les utilisateurs métier."
+        team: "Projet dirigé par Thales, 3 équipes agiles de 4 développeurs. Sprints de 4 semaines avec collaboration continue entre parties prenantes métier et développeurs."
+        results:
+          - "Stabilisation et maintenance d'une application multi-instances pendant la refonte de la plateforme."
+          - "Support de plus de 20 instances spécifiques aux clients, garantissant la continuité du service."
+          - "Contribution à l'amélioration de la maintenabilité du code et à la documentation technique."
+        stack:
+          - name: "PHP"
+            icon: "php-icon"
+          - name: "PostgreSQL"
+            icon: "pg-icon"
+
+      - company: "Thales"
+        position: "Ingénieur Logiciel Full Stack"
+        type: "Projet Interne"
+        from: "Janvier 2025"
+        to: "Mai 2025"
+        content: "Conception et développement d'une application de gestion des prêts de jeux pour la bibliothèque interne du CSE."
+        responsibilities:
+          - "Développement full stack axé sur la gestion des utilisateurs et l'authentification sécurisée via Keycloak."
+          - "Mise en oeuvre des fonctionnalités de réservation, suivi des stocks et historique des activités."
+          - "Contribution aux choix UI/UX et à la logique backend."
+        team: "Équipe agile de 2 à 5 développeurs, sprints de 4 semaines. Coordination étroite avec les utilisateurs métier internes pour recueillir les retours et affiner les flux."
+        results:
+          - "Version bêta livrée et déployée pour tests fonctionnels sur 5 sites Thales."
+          - "Retours positifs des utilisateurs finaux, conduisant à la validation d'une future extension."
+        stack:
+          - name: "React"
+            icon: "react-icon"
+          - name: "Spring Boot"
+            icon: "spring-boot-icon"
+          - name: "PostgreSQL"
+            icon: "pg-icon"
+          - name: "Docker"
+            icon: "docker-icon"
+
+      - company: "Naval Group"
+        position: "Ingénieur Logiciel Front End"
+        type: "Mission"
+        from: "Septembre 2023"
+        to: "Décembre 2024"
+        content: "Développement d'une application de planification personnalisée pour les ateliers de production de Naval Group."
+        responsibilities:
+          - "Développement front-end avec Blazor : composants UI, logique métier et liaison de données."
+          - "Implémentation des fonctionnalités de planification basées sur des règles métier spécifiques."
+          - "Collaboration étroite avec l'équipe interne pour faire correspondre le comportement technique aux besoins opérationnels."
+        team: "Intégré sur site au sein de l'équipe de développement de Naval Group, sprints agiles de 3 semaines. Échanges réguliers avec les parties prenantes métier pour valider la logique de planification."
+        results:
+          - "L'outil a été adopté par plus de 70 % des ateliers de production."
+          - "Amélioration significative de la lisibilité et de la coordination des activités de planification."
+          - "Contribution à la mise en place des bonnes pratiques de développement front-end au sein du projet."
+        stack:
+          - name: "Blazor"
+            icon: "blazor-icon"
+          - name: ".NET"
+            icon: "dotnet-icon"
+          - name: "PostgreSQL"
+            icon: "pg-icon"
+
+  - company: "Arkea"
+    position: "Ingénieur Logiciel Full Stack"
+    type: "Alternance"
+    from: "Septembre 2021"
+    to: "Juillet 2023"
+    content: "Conception et développement de plusieurs POC axés sur l'IA, l'optimisation des processus clients et la gestion de l'espace au sein du service Innovation."
+    responsibilities:
+      - "Développement full stack de prototypes dans divers domaines fonctionnels."
+      - "Mise en oeuvre de workflows métier et d'itérations UX en collaboration avec les parties prenantes produit."
+      - "Programmation autonome ou en binôme sur la base de spécifications fonctionnelles."
+    team: "Petites équipes de 1 à 3 développeurs, haut niveau d'autonomie. Échanges directs avec des experts fonctionnels pour valider les besoins et les cas d'usage."
+    results:
+      - "Plus de 4 POC validés — outils de gestion interne, configuration du flex office, outils IA."
+      - "Plusieurs concepts transférés en production, prouvant leur viabilité technique et opérationnelle."
+    stack:
+      - name: "Vue"
+        icon: "vue-icon"
+      - name: "Spring Boot"
+        icon: "spring-boot-icon"
+      - name: "PostgreSQL"
+        icon: "pg-icon"
+
+  - company: "Safe Walk"
+    position: "Développeur Full Stack - UI / UX Designer"
+    type: "Stage"
+    from: "Juin 2021"
+    to: "Juillet 2021"
+    content: "Conception et développement d'une application mobile pour la sécurité des déplacements nocturnes, basée sur une communauté de plus de 2 000 membres."
+    responsibilities:
+      - "Collecte des besoins fonctionnels et rédaction conjointe des spécifications avec l'association cliente."
+      - "Création de maquettes interactives avec Figma pour valider la conception et le parcours utilisateur."
+      - "Développement d'un MVP couvrant les fonctionnalités essentielles : alertes, géolocalisation et logique de soutien communautaire."
+    team: "Équipe de deux étudiants, travail à distance en autonomie."
+    results:
+      - "Livraison d'un MVP fonctionnel et d'un ensemble complet de ressources de conception."
+      - "Le projet a ensuite été confié à un développeur indépendant pour être perfectionné et rendu public."
+    stack:
+      - name: "Figma"
+        icon: "figma-icon"
+      - name: "Ionic"
+        icon: "ionic-icon"
+      - name: "Angular"
+        icon: "angular-icon"
+
+  - company: "Digital Bricks"
+    position: "Développeur Front End"
+    type: "Stage"
+    from: "Avril 2020"
+    to: "Juillet 2020"
+    content: "Contribution à la refonte d'une plateforme SaaS de publication multicanal pour de grandes marques comme Nike et McDonald's."
+    responsibilities:
+      - "Modernisation de l'interface d'un outil de distribution de contenu multi-plateformes."
+      - "Conception et mise en oeuvre d'un tableau de bord pour les statistiques d'utilisation clients."
+      - "Collaboration à l'architecture front-end avec les principes Material Design."
+    team: "Équipe de 4 développeurs avec des tâches clairement définies. Collaboration étroite avec les développeurs principaux."
+    results:
+      - "Interface modernisée et nouveau tableau de bord déployés en production."
+      - "Contribution aux outils utilisés par de grandes enseignes dans la vente au détail et la restauration."
+    stack:
+      - name: "Twig"
+        icon: "twig-icon"
+      - name: "Symfony"
+        icon: "symfony-icon"
+      - name: "Scss"
+        icon: "sass-icon"
+---

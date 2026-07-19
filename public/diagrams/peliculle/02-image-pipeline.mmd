@@ -1,0 +1,10 @@
+flowchart LR
+    A["Photo demandée"] --> B{"Usage"}
+    B -- "Grille 400 px" --> C["Downsampling ImageIO<br>preview RAW embarqué"]
+    B -- "Viewer 2048 px" --> C
+    B -- "Zoom, piqué" --> D{"RAW ?"}
+    D -- "oui" --> E["CIRAWFilter<br>décodage complet"]
+    D -- "non" --> F["ImageIO plein format"]
+    C --> G[("NSCache partagé<br>coût en octets de pixels")]
+    E --> H[("Cache dédié<br>LRU 2 entrées")]
+    F --> H

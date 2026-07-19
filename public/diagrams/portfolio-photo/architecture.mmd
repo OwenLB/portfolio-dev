@@ -1,0 +1,32 @@
+flowchart TD
+    VISITOR["Visiteur"]
+
+    subgraph Netlify["Netlify"]
+        ASTRO["Astro SSR / SSG"]
+        BUILD["Netlify Build"]
+    end
+
+    subgraph Admin["Admin"]
+        ADMIN["Admin navigateur"]
+    end
+
+    subgraph Cloudflare["Cloudflare"]
+        R2["R2 Storage\nJPEG + JSON"]
+        CDN["CDN + Image Resizing"]
+    end
+
+    VISITOR -->|"GET pages"| ASTRO
+    ASTRO -->|"HTML + data"| VISITOR
+    VISITOR -->|"GET /cdn-cgi/image/"| CDN
+    CDN -->|"WebP redimensionné"| VISITOR
+    CDN -->|"Cache miss"| R2
+    R2 -->|"JPEG original"| CDN
+
+    ADMIN -->|"GET /api/presign"| ASTRO
+    ASTRO -->|"URL signée S3"| ADMIN
+    ADMIN -->|"PUT photo direct"| R2
+    ADMIN -->|"PUT /api/albums"| ASTRO
+    ASTRO -->|"PUT JSON"| R2
+    ADMIN -->|"POST /api/publish"| ASTRO
+    ASTRO -->|"Build hook"| BUILD
+    BUILD -->|"Deploy"| ASTRO

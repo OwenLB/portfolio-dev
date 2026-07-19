@@ -1,0 +1,10 @@
+flowchart TD
+    GIT["Git push\nmain branch"] --> BUILD["Netlify Build\nnuxt generate"]
+    BUILD --> CDN["Netlify CDN\nHTML · JS · CSS · WebP"]
+    LFS["Git LFS\n*.webp"] --> CDN
+    CDN --> BROWSER["Navigateur\nrendu SPA client-side"]
+    BROWSER -->|"useFetch /api/spotify"| FN["Netlify Function\nserver/api/spotify.ts"]
+    FN -->|"refresh_token"| SPOTIFY_TOKEN["Spotify Accounts API\ntoken exchange"]
+    SPOTIFY_TOKEN -->|"access_token"| SPOTIFY_NOW["Spotify Web API\ncurrently-playing"]
+    SPOTIFY_NOW --> FN
+    FN --> BROWSER

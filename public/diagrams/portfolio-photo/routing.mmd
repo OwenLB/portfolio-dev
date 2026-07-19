@@ -1,0 +1,19 @@
+graph TD
+    subgraph SSG["Pages statiques — pré-rendues au build"]
+        HOME["/\nGalerie accueil"]
+        ALBUM["/album-slug\nPage album public"]
+    end
+
+    subgraph SSR["Routes SSR — Netlify Functions"]
+        ADMIN_PAGE["/admin\nInterface administration"]
+        PRESIGN["/api/presign\nURL signée S3"]
+        ALBUMS_API["/api/albums/slug\nCRUD métadonnées"]
+        PUBLISH["/api/publish\nBuild hook Netlify"]
+    end
+
+    HOME --> ALBUM
+    ADMIN_PAGE --> PRESIGN
+    ADMIN_PAGE --> ALBUMS_API
+    ADMIN_PAGE --> PUBLISH
+    PUBLISH -->|"POST build hook"| REBUILD["Netlify Build\nRegénère SSG"]
+    REBUILD --> SSG

@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant U as Utilisateur
+    participant Toggle as Header toggle FR↔EN
+    participant Router as Vue Router (@nuxtjs/i18n)
+    participant Page as Page (/ ⇄ /en)
+    participant Query as useAsyncData
+
+    U->>Toggle: Clic FR/EN
+    Toggle->>Router: navigateTo(switchLocalePath)
+    Router->>Page: Navigation vers /en/…
+    Note over Page: locale = "en" (cookie persisté par i18n)
+    Page->>Query: queryContent().where(_locale = "en")
+    Query-->>U: Contenu EN prérendu + hreflang + canonical
+    Note over U: URL dédiée et indexable, animation de volets

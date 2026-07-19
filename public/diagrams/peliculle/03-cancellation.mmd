@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant U as Utilisateur
+    participant G as Cellule de grille
+    participant T as ThumbnailLoader
+    participant IO as ImageIO
+    U->>G: scroll, la cellule apparaît
+    G->>T: .task lance load maxPixel 400
+    T->>T: cache hit ? retour immédiat
+    T->>IO: sinon downsampling hors main thread
+    U->>G: scroll rapide, la cellule sort de l'écran
+    G--)T: annulation du .task SwiftUI
+    T--)IO: Task.isCancelled, décodage abandonné
+    IO->>T: CGImage borné
+    T->>G: UIImage, insertion cache au coût en octets

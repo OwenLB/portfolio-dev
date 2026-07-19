@@ -1,0 +1,25 @@
+flowchart TD
+    SD["Carte SD via lecteur USB-C<br>security-scoped bookmarks"]
+    LIB["Photothèque iOS<br>PHAsset, albums, périodes"]
+    PB["PhotoBacking<br>enum .file ou .asset"]
+    ITEM["PhotoItem<br>MainActor, Observable"]
+    SESSION["CullSession<br>journal d'annulation, persistance débouncée"]
+    STORE[("SessionStore<br>un JSON par source")]
+    UI["Grille, Viewer, Tri rapide, Duel"]
+    TL["ThumbnailLoader"]
+    FRL["FullResLoader<br>zoom uniquement"]
+    C1[("ImageCache NSCache<br>borné en octets")]
+    C2[("FullResCache<br>LRU 2 entrées")]
+    ROLL["Pellicule iOS<br>keepers uniquement"]
+
+    SD -- "FolderScanner, lecture seule" --> PB
+    LIB -- "PhotoLibrarySource" --> PB
+    PB --> ITEM
+    ITEM --> SESSION
+    SESSION --> STORE
+    ITEM --> UI
+    UI --> TL
+    UI --> FRL
+    TL --> C1
+    FRL --> C2
+    SESSION -- "SaveFlow puis PhotoSaver" --> ROLL

@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant A as Admin
+    participant API as Astro API
+    participant R2 as Cloudflare R2
+
+    A->>API: POST /api/presign
+    API->>R2: Génère URL signée S3 (TTL 3600s)
+    R2-->>API: URL signée
+    API-->>A: URL signée
+    Note over A,R2: Upload direct — ne transite pas par le serveur
+    A->>R2: PUT photo (JPEG original)
+    Note over R2: Cache-Control: immutable, max-age=31536000
+    A->>API: PUT /api/albums/{slug}
+    API->>R2: Màj albums/{slug}.json + index.json
+    API-->>A: 200 OK

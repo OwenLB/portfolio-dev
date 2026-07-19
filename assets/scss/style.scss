@@ -1,0 +1,38 @@
+// Design tokens (SCSS only — no CSS output).
+// This file is injected into EVERY component style block via Vite
+// `additionalData`, so anything that emits CSS here would be duplicated once
+// per component stylesheet. CSS-emitting rules (@font-face, :root, themes)
+// belong in base.scss, loaded once via nuxt.config `css`.
+
+// Colors
+$white: #FFFFFF;
+$green: #1EFDB3;
+$primary: #237afd;
+$primary-on-light: #1a64d6; // light-theme accent — meets WCAG AA (~5.2:1) on $light
+$dark-primary: #569dff;
+$dark: #09223B;
+$dark-background: #061423;
+$light: #F6F9FC;
+$light-accent: #D7E5F2;
+$light-accent-rgb: 215, 229, 242;
+$dark-accent: #15243D;
+$dark-accent-rgb: 21, 36, 61;
+
+// Breakpoints
+$md: 768px;
+
+// Mixins
+@mixin transition($properties...) {
+  $transition-properties: '';
+
+  @each $property in $properties {
+    $transition-properties: #{$transition-properties}, #{$property} 0.3s ease-in-out;
+  }
+
+  transition: $transition-properties;
+}
+
+// Functions
+@function space($value) {
+  @return $value * 4px;
+}

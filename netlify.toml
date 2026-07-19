@@ -1,0 +1,42 @@
+# Security headers applied to every response.
+# Note: only headers are defined here — the build command and publish
+# directory stay configured in the Netlify UI, so this file does not change
+# how the site is built or deployed.
+#
+# The CSP is sent as Report-Only on purpose: it reports violations without
+# enforcing, so it cannot break the live site. Promote it to an enforcing
+# `Content-Security-Policy` once the browser console shows no violations
+# (and ideally after the SSR migration, when inline scripts can be hashed).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://analytics.umami.is; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://analytics.umami.is; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'"
+
+# Note: do NOT force a Content-Type on /sitemap.xml. With i18n, @nuxtjs/sitemap
+# makes /sitemap.xml an HTML meta-refresh redirect to the real index
+# (/sitemap_index.xml). Forcing application/xml on it makes browsers/crawlers
+# parse the redirect HTML as XML and fail. robots.txt points crawlers straight
+# at /sitemap_index.xml, which is already served as application/xml.
+
+# /about is a legacy route (About is a section on the home page, not a
+# standalone page) — pages/about.vue prerenders as a 200 + meta-refresh to "/"
+# for lack of a server to issue a real redirect, and its middleware used to
+# hardcode the French locale, so /en/about was silently landing on the French
+# home. `force = true` because a prerendered /about/index.html already exists
+# and would otherwise win over these rules.
+[[redirects]]
+  from = "/about"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/about"
+  to = "/en/"
+  status = 301
+  force = true

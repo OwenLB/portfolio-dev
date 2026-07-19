@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "claude/**"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      # Pinned to match the npm version the lockfile was generated with —
+      # otherwise npm's resolution of optional peerDependencies (e.g.
+      # @nuxt/cli's optional peer on `commander`) can vary between npm
+      # versions and `npm ci` fails with "Missing: commander@X from lock file".
+      - run: npm install -g npm@11.8.0
+      - run: npm ci
+      - run: npm run generate

@@ -1,0 +1,14 @@
+graph TD
+    PAGE[".page\ngrid-template-columns:\nside · col · col · col · side"]
+
+    PAGE -->|"display: contents"| HEADER["AppHeader\ndisplay: contents"]
+    PAGE -->|"display: contents"| SEC1["AppSection\ndisplay: contents"]
+
+    HEADER --> C1[".cell.name\nlogo + lien accueil"]
+    HEADER --> C2[".cell.control\nFR/EN · thème"]
+
+    SEC1 --> C3[".cell.cell--triple-column\ngrid-column: span 3"]
+    SEC1 --> C4[".cell.cell--double-column\ngrid-column: span 2"]
+    SEC1 --> C5[".cell\ngrid-column: 1"]
+
+    style PAGE fill:#237afd22,stroke:#237afd

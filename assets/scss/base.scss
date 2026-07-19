@@ -1,0 +1,135 @@
+// Global stylesheet — loaded ONCE via nuxt.config `css`.
+// Everything that *emits* CSS (font-faces, :root custom properties, theme
+// blocks) lives here. `style.scss` is injected into every component style via
+// `additionalData`, so it must stay output-free (variables/mixins/functions
+// only) or its rules get duplicated in each compiled component stylesheet.
+@use "sass:color";
+@use "./style.scss" as *;
+
+// Fonts
+@font-face {
+  font-family: 'PP Formula Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/PPFormulaCondensed-Light.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Formula Condensed';
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/PPFormulaCondensed-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Strawford';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/Strawford-Light.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Strawford';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Strawford-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Strawford';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Strawford-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+// Mono accent — JetBrains Mono (OFL), subsetted to latin + French diacritics
+// (~18 KB). Used for metadata: project types, dates, stack lists, inline code.
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+// Metric-adjusted local fallbacks (capsize/fontaine formulas, computed from
+// the actual font tables) so the swap from system font → webfont doesn't
+// shift layout (CLS ≈ 0). Each web font's stack goes through its fallback.
+@font-face {
+  font-family: 'PP Formula Condensed Fallback';
+  src: local('Arial');
+  size-adjust: 86.87%;
+  ascent-override: 99%;
+  descent-override: 43.74%;
+  line-gap-override: 11.51%;
+}
+
+@font-face {
+  font-family: 'Strawford Fallback';
+  src: local('Arial');
+  size-adjust: 110.68%;
+  ascent-override: 85.29%;
+  descent-override: 28.91%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono Fallback';
+  src: local('Courier New');
+  size-adjust: 99.98%;
+  ascent-override: 102.02%;
+  descent-override: 30%;
+  line-gap-override: 0%;
+}
+
+:root {
+  // Colors
+  --primary: #{$primary-on-light};
+  --text: #{$dark};
+  --text-accent: #{color.adjust($dark, $lightness: +16%)};
+  --background: #{$light};
+  --accent: #{$light-accent};
+  --accent-rgb: #{$light-accent-rgb};
+  --arc: #89d6ff;
+
+  // Layout
+  --main-space: #{space(6)};
+
+  // Motion — single source of truth for every animation on the site.
+  // --ease-expo is the historical "curtain" easing, kept as the signature.
+  --ease-expo: cubic-bezier(0.83, 0, 0.17, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.2s;
+  --dur-base: 0.45s;
+  --dur-slow: 0.8s;
+  --theme-t: 0.3s ease-in-out;
+
+  // Type — fluid scale (mobile values → previous desktop values).
+  --font-display: 'PP Formula Condensed', 'PP Formula Condensed Fallback', sans-serif;
+  --font-body: 'Strawford', 'Strawford Fallback', sans-serif;
+  --font-mono: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, monospace;
+  --text-hero: clamp(3rem, 1.4rem + 7vw, 6rem);
+  --text-title: clamp(1.125rem, 0.95rem + 0.8vw, 1.5rem);
+  --text-card: clamp(2rem, 1.55rem + 2vw, 3rem);
+}
+
+html[data-theme="dark"] {
+  --primary: #{color.adjust($primary, $lightness: +16%)};
+  --text: #{$light};
+  --text-accent: #{color.adjust($light, $lightness: -16%)};
+  --background: #{$dark-background};
+  --accent: #{$dark-accent};
+  --accent-rgb: #{$dark-accent-rgb};
+  --arc: #16395c;
+}
+
+@media screen and (min-width: $md) {
+  :root {
+    --main-space: #{space(10)};
+  }
+}

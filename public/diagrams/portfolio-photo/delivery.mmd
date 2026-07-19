@@ -1,0 +1,12 @@
+flowchart LR
+    B["Navigateur"]
+    CF["Cloudflare\nImage Resizing"]
+    R2["Cloudflare R2\nJPEG original"]
+    CACHE["Cache CDN\npublic, max-age=31536000"]
+
+    B -->|"/cdn-cgi/image/width=1200\nquality=78,format=webp/photo.jpg"| CF
+    CF -->|"Cache hit → WebP"| CACHE
+    CACHE -->|"Réponse immédiate"| B
+    CF -->|"Cache miss"| R2
+    R2 -->|"JPEG original"| CF
+    CF -->|"Redimensionne + encode WebP"| CACHE

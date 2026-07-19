@@ -1,0 +1,143 @@
+---
+items:
+  - company: "Thales"
+    position: "Software Engineer"
+    type: "CDI"
+    from: "September 2023"
+    to: "Now"
+    sub_content:
+      - company: "EDF"
+        position: "Full Stack Software Engineer"
+        type: "Mission"
+        from: "May 2025"
+        to: "Now"
+        content: "Development of a collaborative business data management tool with customisable workflows, used internally at EDF."
+        responsibilities:
+          - "Full stack development on the existing platform."
+          - "Ongoing maintenance (RUN/MCO) and functional improvements."
+          - "Contributions to a proprietary PHP framework and internal tooling."
+          - "Technical support and functional request handling, including direct communication with business users."
+        team: "Thales-led project, 3 agile teams of 4 developers each. 4-week sprints with continuous collaboration between business stakeholders and developers."
+        results:
+          - "Stabilisation and maintenance of a large-scale multi-instance application during platform refactoring."
+          - "Support for 20+ client-specific instances, ensuring service continuity and operational consistency."
+          - "Contribution to code maintainability improvements and technical documentation."
+        stack:
+          - name: "PHP"
+            icon: "php-icon"
+          - name: "PostgreSQL"
+            icon: "pg-icon"
+
+      - company: "Thales"
+        position: "Full Stack Software Engineer"
+        type: "Internal Project"
+        from: "January 2025"
+        to: "May 2025"
+        content: "Design and development of a game loan management app for the company's internal CSE library."
+        responsibilities:
+          - "Full stack development focused on user management and secure authentication via Keycloak."
+          - "Implementation of booking, stock visibility and activity history features."
+          - "Contribution to UI/UX design decisions and backend logic."
+        team: "Agile team of 2 to 5 developers, 4-week sprints. Close coordination with internal business users to gather feedback and refine user flows."
+        results:
+          - "Beta version delivered and deployed for functional testing across 5 Thales sites."
+          - "Positive end-user feedback, leading to validation of a future extension."
+        stack:
+          - name: "React"
+            icon: "react-icon"
+          - name: "Spring Boot"
+            icon: "spring-boot-icon"
+          - name: "PostgreSQL"
+            icon: "pg-icon"
+          - name: "Docker"
+            icon: "docker-icon"
+
+      - company: "Naval Group"
+        position: "Front-End Software Engineer"
+        type: "Mission"
+        from: "September 2023"
+        to: "December 2024"
+        content: "Development of a custom scheduling application for Naval Group's production workshops."
+        responsibilities:
+          - "Front-end development with Blazor: UI components, business logic and data binding."
+          - "Implementation of scheduling features based on specific business rules."
+          - "Close collaboration with the internal team to align technical behaviour with operational needs."
+        team: "Embedded on-site within Naval Group's development team, 3-week agile sprints. Regular discussions with business stakeholders to refine scheduling logic and validate feature delivery."
+        results:
+          - "The tool was adopted by over 70% of production workshops."
+          - "Significant improvement in the readability and coordination of scheduling activities."
+          - "Contributed to establishing front-end development best practices within the project."
+        stack:
+          - name: "Blazor"
+            icon: "blazor-icon"
+          - name: ".NET"
+            icon: "dotnet-icon"
+          - name: "PostgreSQL"
+            icon: "pg-icon"
+
+  - company: "Arkea"
+    position: "Full Stack Software Engineer"
+    type: "Apprenticeship"
+    from: "September 2021"
+    to: "July 2023"
+    content: "Design and development of multiple POCs focused on AI, client process optimisation and workspace management within the Innovation department."
+    responsibilities:
+      - "Full stack development of prototypes across various functional domains."
+      - "Implementation of business workflows and UX iterations in collaboration with product stakeholders."
+      - "Independent or pair programming based on functional specifications."
+    team: "Small teams of 1 to 3 developers with a high level of autonomy. Direct exchanges with functional experts to validate requirements and use cases."
+    results:
+      - "4+ validated POCs — internal management tools, flex office configuration, AI tools."
+      - "Several concepts transferred to production, proving their technical and operational viability."
+    stack:
+      - name: "Vue"
+        icon: "vue-icon"
+      - name: "Spring Boot"
+        icon: "spring-boot-icon"
+      - name: "PostgreSQL"
+        icon: "pg-icon"
+
+  - company: "Safe Walk"
+    position: "Full Stack Developer - UI/UX Designer"
+    type: "Internship"
+    from: "June 2021"
+    to: "July 2021"
+    content: "Design and development of a mobile app for nighttime safety, built around a community of over 2,000 members."
+    responsibilities:
+      - "Gathering functional requirements and co-writing specifications with the client association."
+      - "Creating interactive mockups in Figma to validate design and user flows."
+      - "Development of an MVP covering core features: alerts, geolocation and community support logic."
+    team: "Two-student team, working remotely with full autonomy."
+    results:
+      - "Delivery of a functional MVP and a complete set of design assets."
+      - "The project was subsequently handed to a freelance developer for refinement and public release."
+    stack:
+      - name: "Figma"
+        icon: "figma-icon"
+      - name: "Ionic"
+        icon: "ionic-icon"
+      - name: "Angular"
+        icon: "angular-icon"
+
+  - company: "Digital Bricks"
+    position: "Front-End Developer"
+    type: "Internship"
+    from: "April 2020"
+    to: "July 2020"
+    content: "Contribution to the redesign of a multichannel SaaS publishing platform used by major brands including Nike and McDonald's."
+    responsibilities:
+      - "Modernisation of the UI for a multi-platform content distribution tool."
+      - "Design and implementation of a client usage statistics dashboard."
+      - "Contribution to front-end architecture using Material Design principles."
+    team: "Team of 4 developers with clearly defined tasks. Close collaboration with senior developers in a structured environment."
+    results:
+      - "Modernised UI and new statistics dashboard deployed to production."
+      - "Contribution to tools used by major brands in retail and food service."
+    stack:
+      - name: "Twig"
+        icon: "twig-icon"
+      - name: "Symfony"
+        icon: "symfony-icon"
+      - name: "Scss"
+        icon: "sass-icon"
+---

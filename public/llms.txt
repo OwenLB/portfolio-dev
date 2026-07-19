@@ -1,0 +1,19 @@
+# Owen LE BEC
+
+> Full Stack Software Engineer (5 years' experience), currently at Thales. Builds web and mobile applications end-to-end — front to back — for industrial and financial clients (Thales, EDF, Naval Group, Crédit Mutuel Arkéa). Site is bilingual: French at the root, English under /en/.
+
+## Pages
+
+- [Home](https://owenlebec.fr/): profile, experience timeline, and project list.
+- [English home](https://owenlebec.fr/en/): English version of the above.
+- [Finixa](https://owenlebec.fr/projects/finixa): mobile-first personal finance SaaS (Nuxt, Supabase, Capacitor).
+- [Peliculle](https://owenlebec.fr/projects/peliculle): iOS app.
+- [Scan Auto](https://owenlebec.fr/projects/scanauto): web app for car buying/inspection.
+- [Portfolio Dev](https://owenlebec.fr/projects/portfolio-dev): this site.
+- [Portfolio Photo](https://owenlebec.fr/projects/portfolio-photo): photography portfolio project.
+- [Legal](https://owenlebec.fr/legal): legal notice / mentions légales.
+
+## Contact
+
+- GitHub: https://github.com/OwenLB
+- LinkedIn: https://www.linkedin.com/in/OwenLB/

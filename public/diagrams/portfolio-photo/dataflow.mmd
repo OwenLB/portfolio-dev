@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant B as Navigateur
+    participant A as Astro SSG
+    participant R2 as Cloudflare R2
+    participant CF as Image Resizing
+    participant VUE as Vue island Galerie
+
+    B->>A: GET /album-slug
+    Note over A: Page pré-rendue au build
+    A->>R2: Fetch albums/album-slug.json
+    R2-->>A: Métadonnées + URLs photos
+    A-->>B: HTML statique + data inlinée
+    B->>VUE: Hydratation island
+    VUE->>VUE: justified-layout — calcul positions
+    loop Chargement miniatures
+        VUE->>CF: GET /cdn-cgi/image/width=400,format=webp/photo.jpg
+        CF-->>VUE: WebP miniature
+    end
+    Note over VUE: ResizeObserver — recalcul si largeur change
